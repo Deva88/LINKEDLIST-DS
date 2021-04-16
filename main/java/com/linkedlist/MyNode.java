@@ -1,6 +1,6 @@
 package com.linkedlist;
 /*
- *@Description:-create a simple Linked List
+ *@Description:-create Linked List by adding
  */
 public class MyNode<K> implements INode<K> {
     private INode next;
