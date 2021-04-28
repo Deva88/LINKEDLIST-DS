@@ -97,6 +97,33 @@ public class MyLinkedList {
         return false;
     }
 
+    //searching and deleting
+    public void searchAndDelete(INode searchNode) {
+        if (searchElement(searchNode)) {
+            System.out.println("Linked List size before deleting element : " + size());
+            INode nextNode = searchNode.getNext();
+            INode tempNode = nextNode.getNext();
+            if (nextNode != tail) {
+                searchNode.setNext(tempNode);
+                System.out.println("Linked List size after deleting element : " + size());
+            }
+        }
+    }
+
+    //sorting And Insert
+    public void sortAndInsert(INode myNode){
+        INode tempnode = head;
+        INode prevNode = null;
+        while (tempnode != null && (int) myNode.getKey() >= (int) tempnode.getKey()) {
+            prevNode = tempnode;
+            tempnode = tempnode.getNext();
+        }
+        if(prevNode == null)
+            this.head = myNode;
+        else
+            prevNode.setNext(myNode);
+        myNode.setNext(tempnode);
+    }
 
     //printing nodes
     public void printMyNodes() {
@@ -109,18 +136,5 @@ public class MyLinkedList {
         }
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
-    }
-
-    //searching and deleting
-    public void searchAndDelete(INode searchNode) {
-        if (searchElement(searchNode)) {
-            System.out.println("Linked List size before deleting element : " + size());
-            INode nextNode = searchNode.getNext();
-            INode tempNode = nextNode.getNext();
-            if (nextNode != tail) {
-                searchNode.setNext(tempNode);
-                System.out.println("Linked List size after deleting element : " + size());
-            }
-        }
     }
 }
