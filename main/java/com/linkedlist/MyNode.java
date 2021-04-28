@@ -1,23 +1,23 @@
 package com.linkedlist;
 /*
- *@Description:-create Linked List by adding
+ *@Description:-adding three elements to linled list
  */
-public class MyNode<K> implements INode<K> {
-    private INode next;
-    private K key;
+public class MyNode<k> implements INode<k> {
+    private  k key;
+    private MyNode<k> next;
 
-    public MyNode(K key) {
+    public MyNode(k key) {
         this.key = key;
         this.next = null;
     }
 
     @Override
-    public K getKey() {
+    public k getKey() {
         return key;
     }
 
     @Override
-    public void setKey(K key) {
+    public void setKey(k key) {
         this.key = key;
     }
 
@@ -25,8 +25,12 @@ public class MyNode<K> implements INode<K> {
         return next;
     }
 
-    public void setNext(INode next) {
-        this.next = next;
+    @Override
+    public void setKey(INode next) {
+
     }
 
+    public void setNext(INode next) {
+        this.next = (MyNode<k>) next;
+    }
 }

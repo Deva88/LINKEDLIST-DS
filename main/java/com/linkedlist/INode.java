@@ -8,6 +8,8 @@ public interface INode<K> {
 
     INode getNext();
 
+    void setKey(INode next);
+
     void setNext(INode next);
 
 }
