@@ -1,5 +1,4 @@
 package com.linkedlist;
-
 public class MyLinkedList {
 
     public INode head;
@@ -44,13 +43,23 @@ public class MyLinkedList {
         newNode.setNext(tempNode);
     }
 
-    //Deleting first element
+    //deleting first element
     public INode pop() {
         INode tempNode = this.head;
         this.head = head.getNext();
         return tempNode;
     }
 
+    //deleting last element
+    public INode popLast() {
+        INode tempNode = head;
+        while (!tempNode.getNext().equals((tail))){
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode = tempNode.getNext();
+        return tempNode;
+    }
 
     //printing nodes
     public void printMyNodes() {
