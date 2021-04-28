@@ -6,6 +6,7 @@ package com.linkedlist;
  * Deleting last Node
  * Searching Node
  * Insert Node
+ * searching and deleting
  */
 public class MyNode<k> implements INode<k> {
     private  k key;
